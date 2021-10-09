@@ -25,28 +25,25 @@ void loop() {
   // put your main code here, to run repeatedly:
   uint16_t drankLevel = analogRead(INPIN);
   clearBar();
-  if (drankLevel>2700)
-  {
-    setBar(0b1111111, 255, 0, 0);
-  } else if (drankLevel>2650)
-  {
-    setBar(0b0111111, 250, 150, 0);
-  } else if (drankLevel>2600)
-  {
-    setBar(0b0011111, 150, 150, 0);
-  } else if (drankLevel>2550)
-  {
-    setBar(0b0001111, 150, 150, 0);
-  } else if (drankLevel>2500)
-  {
-    setBar(0b0000111, 150, 150, 0);
-  } else if (drankLevel>2450)
-  {
-    setBar(0b0000011, 150, 150, 0);
-  } else
-  {
-    setBar(0b0000001, 250, 150, 0);
+  if (drankLevel>2700) {
+    setBar(0b1000000, 255, 0, 0);
   }
+  if (drankLevel>2650) {
+    setBar(0b0100000, 255, 108, 0);
+  }
+  if (drankLevel>2600) {
+    setBar(0b0010000, 255, 233, 0);
+  }
+  if (drankLevel>2550) {
+    setBar(0b0001000, 200, 238, 0);
+  }
+  if (drankLevel>2500) {
+    setBar(0b0000100, 151, 242 ,0);
+  }
+  if (drankLevel>2450) {
+    setBar(0b0000010, 71, 249, 0);
+  }
+  setBar(0b0000001, 11, 255, 0);
   Serial.println(drankLevel);
   delay(10);
 }
